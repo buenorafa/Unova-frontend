@@ -31,17 +31,16 @@ export class SignInComponent {
   }
 
   onSubmit() {
-    // const { email, senha } = this.loginForm.value;
-    // console.log('Email:', email);
-    // this.userService.login(email, senha).subscribe({
-    //   next: (user) => {
-    //     console.log('Login bem-sucedido:', user);
-
-    //   },
-    //   error: (error) => {
-    //     console.error('Erro no login:', error);
-    //   },
-    // });
-    this.roteador.navigate(['/profile']);
+    const { email, senha } = this.loginForm.value;
+    console.log('Email:', email);
+    this.userService.login(email, senha).subscribe({
+      next: (user) => {
+        console.log('Login bem-sucedido:', user);
+        this.roteador.navigate(['/profile']);
+      },
+      error: (error) => {
+        console.error('Erro no login:', error);
+      },
+    });
   }
 }
