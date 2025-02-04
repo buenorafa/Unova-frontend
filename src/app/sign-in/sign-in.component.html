@@ -14,12 +14,12 @@
         </p>
       </div>
       <div class="grid gap-6">
-        <form>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
           <div class="grid gap-2">
             <div class="space-y-1">
               <label
                 class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                for=":r0:-form-item"
+                for=":r0:-form-item" 
                 >Email</label
               ><input
                 class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
@@ -28,8 +28,7 @@
                 aria-describedby=":r0:-form-item-description"
                 aria-invalid="false"
                 value=""
-                name="email"
-              />
+                name="email" id="email" formControlName="email"/>
             </div>
             <div class="space-y-1">
               <div class="flex justify-between">
@@ -52,6 +51,7 @@
                   type="password"
                   value=""
                   name="password"
+                  id="senha" formControlName="senha"
                 /><button
                   class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground absolute right-1 top-1/2 h-6 w-6 -translate-y-1/2 rounded-md text-muted-foreground"
                   type="button"
