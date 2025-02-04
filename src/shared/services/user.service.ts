@@ -6,13 +6,13 @@ import { User } from '../models/user';
 @Injectable({
     providedIn: 'root',
 })
-export class VendedorService {
-    URL_USUARIOS = 'http://localhost:8080/users';
+export class UserService {
+    private URL_USUARIOS = 'http://localhost:8080/api/users';
 
     constructor(private httpClient: HttpClient) {}
 
     cadastrar(usuario: User): Observable<User> {
-        return this.httpClient.post<User>(this.URL_USUARIOS, usuario);
+        return this.httpClient.post<User>(this.URL_USUARIOS + '/register', usuario);
     }
 
     listar(): Observable<User[]> {

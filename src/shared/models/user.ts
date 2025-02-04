@@ -1,14 +1,20 @@
 export class User {
 
-    id: number;
-    nome: string;
-    senha: string;
-    email: string;
+    id?: number;
+    name?: string;
+    username?: string;
+    phoneNumber?:string;
+    email?: string;
+    address?: string;
+    password?: string;
 
-    constructor(id: number, nome: string, senha: string, email: string) {
+    constructor(id?: number, name?: string, username?: string, phoneNumber?:string,  email?: string, address?: string, password?: string) {
         this.id = id;
-        this.nome = nome;
-        this.senha = senha;
+        this.name = name;
+        this.username = username;
+        this.password = password;
         this.email = email;
-    }
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        }
 }
