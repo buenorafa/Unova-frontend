@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { UserService } from '../../shared/services/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../shared/models/user';
+import { SweetAlertService } from '../../shared/services/sweet-alert.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ clickEvent(event: MouseEvent) {
   event.stopPropagation();
 }
 
-constructor(private fb:FormBuilder,  private roteador: Router, private userService: UserService) { 
+constructor(private fb:FormBuilder,  private roteador: Router, private userService: UserService, private sweetAlert: SweetAlertService) { 
     this.registerForm = this.fb.group({
     nome: ['', [Validators.required]],
     username: ['', [Validators.required]],
@@ -47,11 +48,12 @@ onSubmit() {
 
     this.userService.cadastrar(this.user).subscribe({
       next: () => {
-        console.log('Usuário cadastrado com sucesso!');
+        this.sweetAlert.sucesso('Usuário cadastrado com sucesso!');
         this.roteador.navigate(['/sign-in']);
         // Lógica após cadastro bem-sucedido (e.g., redirecionar para a tela de login)
       },
       error: (err) => {
+        this.sweetAlert.erro('Erro no cadastro!');
         console.error('Erro no cadastro:', err);
         // Exibir mensagem de erro
       }

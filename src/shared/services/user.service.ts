@@ -30,11 +30,16 @@ export class UserService {
         );
     }
 
-    remover(User: User): Observable<User> {
+    remover(usuario: User): Observable<User> {
         return this.httpClient.delete<User>(
-        this.URL_USUARIOS + '/' + User.id
+        this.URL_USUARIOS + '/' + usuario.id
         );
     }
+
+    login(email: string, password: string): Observable<any> {
+        return this.httpClient.post<any>(this.URL_USUARIOS + '/login', { email, password });
+      }
+
 
     buscarPorEmail(email: string): Promise<User | null | undefined> {
         return this.httpClient.get<User[]>(this.URL_USUARIOS + '?email=' + email).pipe(
