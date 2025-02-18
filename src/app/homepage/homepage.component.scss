@@ -121,7 +121,7 @@ h3 {
 .infos-box {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 
 .box-title {
@@ -133,4 +133,9 @@ h3 {
   font-size: 16px;
   font-weight: 300;
   color: #3e7dca;
+}
+
+.avaliacao i {
+  color: rgb(255, 238, 0);
+  font-size: 12px;
 }
