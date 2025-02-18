@@ -1,0 +1,141 @@
+* {
+  font-family: Poppins;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 400px;
+  background-image: url("../../assets/imgs/bg.png");
+  background-size: cover;
+  padding: 56px 150px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#first-button {
+  color: white;
+  display: flex;
+  padding: 8px 16px;
+  align-items: center;
+  border-radius: 6px;
+  background: #3e7dca;
+}
+
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  padding: 32px 150px;
+  background-color: #e0e0e0;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cards-category {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.card-category {
+  color: white;
+  display: flex;
+  width: 24%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  background: #3e7dca;
+  border-radius: 8px;
+}
+
+.box-promo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.box-promo-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.box-promo-button {
+  font-size: 14px;
+  padding: 2px 4px 2px 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #464646;
+  border-radius: 6px;
+}
+
+.box-list {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.box-promo-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.box-promo-card img {
+  width: 120px;
+}
+
+.infos-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.box-title {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.box-price {
+  font-size: 16px;
+  font-weight: 300;
+  color: #3e7dca;
+}
+
+.avaliacao i {
+  color: rgb(255, 238, 0);
+  font-size: 12px;
+}
