@@ -1,20 +1,14 @@
-import {Component, OnInit} from '@angular/core';
-import {MatCard, MatCardContent} from "@angular/material/card";
-import {Product} from "../services/product.service";
-import {Input} from "postcss";
-import {DecimalPipe} from "@angular/common";
+import { Component, Input } from '@angular/core';
+
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-product-store',
   standalone: true,
-  imports: [
-    MatCard,
-    MatCardContent,
-    DecimalPipe
-  ],
+  imports: [CommonModule],
   templateUrl: './product-store.component.html',
-  styleUrl: './product-store.component.scss'
+  styleUrls: ['./product-store.component.scss'],
 })
 export class ProductStoreComponent {
-  @Input() product!: Product;
+  @Input() products!: Product[];
 }
