@@ -1,0 +1,38 @@
+[
+  {
+    "image": "assets/imgs/cartas/carta01.png",
+    "name": "Shining Charizard",
+    "description": "Descrição do produto 1",
+    "price": 8499.99
+  },
+  {
+    "image": "assets/imgs/cartas/carta02.png",
+    "name": "Blastoise",
+    "description": "Descrição do produto 2",
+    "price": 299.99
+  },
+  {
+    "image": "assets/imgs/cartas/carta03.png",
+    "name": "Pikachu",
+    "description": "Descrição do produto 3",
+    "price": 382.4
+  },
+  {
+    "image": "assets/imgs/cartas/carta04.jpg",
+    "name": "Koraidon",
+    "description": "Descrição do produto 4",
+    "price": 89.9
+  },
+  {
+    "image": "assets/imgs/cartas/carta05.jpg",
+    "name": "Bulbassaur Vine Whip",
+    "description": "Descrição do produto 5",
+    "price": 89.9
+  },
+  {
+    "image": "assets/imgs/cartas/carta06.jpg",
+    "name": "Pikachu Random Spark",
+    "description": "Descrição do produto 6",
+    "price": 648.99
+  }
+]
