@@ -139,3 +139,13 @@ h3 {
   color: rgb(255, 238, 0);
   font-size: 12px;
 }
+
+.carta-promo-card {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  background-color: white;
+  padding: 8px;
+  width: 234px;
+  border-radius: 8px;
+}

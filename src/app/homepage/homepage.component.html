@@ -36,7 +36,7 @@
       <a href="#" class="box-promo-button">Ver todos</a>
     </div>
     <div class="box-list">
-      <a href="#" class="box-promo-card">
+      <div class="box-promo-card">
         <img src="../../assets/imgs/pokemon-box1.png" alt="" />
         <div class="infos-box">
           <div class="avaliacao">
@@ -51,8 +51,8 @@
           </p>
           <p class="box-price">R$ 359,90</p>
         </div>
-      </a>
-      <a href="#" class="box-promo-card">
+      </div>
+      <div class="box-promo-card">
         <img src="../../assets/imgs/pokemon-box2.png" alt="" />
         <div class="infos-box">
           <div class="avaliacao">
@@ -67,8 +67,8 @@
           </p>
           <p class="box-price">R$ 359,90</p>
         </div>
-      </a>
-      <a href="#" class="box-promo-card">
+      </div>
+      <div class="box-promo-card">
         <img src="../../assets/imgs/pokemon-box3.png" alt="" />
         <div class="infos-box">
           <div class="avaliacao">
@@ -83,7 +83,23 @@
           </p>
           <p class="box-price">R$ 359,90</p>
         </div>
-      </a>
+      </div>
+    </div>
+  </div>
+  <div class="box-promo">
+    <div class="box-promo-title">
+      <p class="title">Cartas em promoção</p>
+      <a href="#" class="box-promo-button">Ver todos</a>
+    </div>
+    <div class="box-list">
+      <div class="carta-promo-card" *ngFor="let product of products">
+        <img [src]="product.image" alt="{{ product.name }}" />
+        <div class="infos-box">
+          <p class="box-title">{{ product.name }}</p>
+          <p class="box-price">R$ {{ product.price }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

@@ -11,7 +11,7 @@ import {Product, ProductService} from "../../shared/services/product.service";
     MatCardModule
   ],
   templateUrl: './product-store.component.html',
-  styleUrl: './product-store.component.scss'
+  styleUrls: ['./product-store.component.scss'],
 })
 export class ProductStoreComponent {
   products: any[] = [];
