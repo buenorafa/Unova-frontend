@@ -1,0 +1,47 @@
+.input {
+  flex: 1;
+  height: 36px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.file-input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 36px;
+  padding: 5px;
+  background: white;
+}
+
+.file-label {
+  background: #013A71;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.file-name {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.submit-button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
