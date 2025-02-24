@@ -1,6 +1,12 @@
-<div class="store">
-  <h1>Loja de Cartas Pokémon</h1>
-  <div class="grid">
-    <app-product-store *ngFor="let product of products"></app-product-store>
+<app-nav-bar></app-nav-bar>
+
+<div class="main-container">
+  <div class="content-wrapper">
+    <h1 class="page-title">Loja</h1>
+
+    <!-- Container para os cards de produtos -->
+    <div class="product-container">
+      <app-product-store></app-product-store>
+    </div>
   </div>
 </div>
