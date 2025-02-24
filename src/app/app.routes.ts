@@ -6,16 +6,25 @@ import { ProfileComponent } from './profile/profile.component';
 import { NgModule } from '@angular/core';
 import {StoreComponent} from "./store/store.component";
 import {AddProductComponent} from "./add-product/add-product.component";
+import { UserInformationComponent } from './profile/user-information/user-information.component';
+import { OrdersComponent } from './profile/orders/orders.component';
+import { MyProductsComponent } from './profile/my-products/my-products.component';
 
 export const appRoutes: Routes = [
   // { path: '', redirectTo: 'sign-in', pathMatch: 'full' }, // Redireciona para login ao iniciar
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'profile', component: ProfileComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: 'store', component: StoreComponent },
   { path: 'add-product', component:AddProductComponent},
-
+  { path: 'profile', component: ProfileComponent,
+    children:[
+  { path: 'my-information', component: UserInformationComponent },
+  { path: 'my-orders', component: OrdersComponent },
+  { path: 'my-products', component: MyProductsComponent },
+  { path: '**', redirectTo: 'my-information'}
+    ],
+  },
    { path: '**', redirectTo: 'homepage' }, // Redireciona para login se a rota não existir
 ];
 

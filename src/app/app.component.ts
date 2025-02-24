@@ -5,11 +5,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
+  imports: [RouterOutlet, ReactiveFormsModule, CommonModule, ProfileComponent, SignUpComponent, NavBarComponent, SignInComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
