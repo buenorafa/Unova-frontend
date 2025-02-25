@@ -26,7 +26,7 @@ export class UserService {
     editar(usuario: User): Observable<User> {
         return this.httpClient.put<User>(
         this.URL_USUARIOS + '/' + usuario.id,
-        User
+        usuario
         );
     }
 
