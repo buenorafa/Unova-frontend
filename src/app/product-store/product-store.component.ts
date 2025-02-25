@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {MatCard, MatCardContent, MatCardModule} from "@angular/material/card";
 import {CommonModule, DecimalPipe} from "@angular/common";
 import {Product, ProductService} from "../../shared/services/product.service";
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-product-store',
@@ -16,7 +17,18 @@ import {Product, ProductService} from "../../shared/services/product.service";
 export class ProductStoreComponent {
   products: any[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private snackBar: MatSnackBar
+  ) {}
+
+  addToCart(product: any) {
+    this.snackBar.open(`${product.name} foi adicionado ao carrinho!`, 'Fechar', {
+      duration: 3000, // Tempo que o alerta fica visível (3s)
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+    });
+  }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe({

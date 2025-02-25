@@ -9,7 +9,7 @@
       <h3 class="product-title">{{ product.name }}</h3>
       <p class="product-description">{{ product.description }}</p>
       <p class="product-price">R$ {{ product.price | number : "1.2-2" }}</p>
-      <button class="product-button">Comprar</button>
+      <button class="product-button" (click)="addToCart(product)">Adicionar ao carrinho</button>
     </div>
   </div>
 </div>
