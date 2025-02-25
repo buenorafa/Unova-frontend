@@ -4,13 +4,13 @@
     min-height: 100vh;
     padding: 1.5rem;
   }
-  
+
   /* Wrapper para o conteúdo */
   .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
   }
-  
+
   /* Título da página */
   .page-title {
     font-size: 1.5rem;
@@ -19,15 +19,7 @@
     color: #2d3748;
     margin-bottom: 1.5rem;
   }
-  
-  /* Container para os cards de produtos */
-  .product-container {
-    display: flex;
-    gap: 1.5rem;
-    overflow-x: auto;  /* Permite rolar horizontalmente se os cards ultrapassarem a largura */
-    padding: 1rem;
-  }
-  
+
   /* Estilo para os cards de produtos */
   app-product-store {
     min-width: 250px; /* Define a largura mínima para os cards */
