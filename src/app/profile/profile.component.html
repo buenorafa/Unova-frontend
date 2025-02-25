@@ -1,24 +1,31 @@
-<app-nav-bar></app-nav-bar>
+<div class="flex flex-col min-h-screen">
+  <app-nav-bar></app-nav-bar>
 
-    <div class="w-3/4 h-3/4 flex px-[128px] py-[64px] m-auto">
-      <!-- Sidebar -->
-      <aside class="w-[300px] p-4 bg-gray-100 shadow-md">
-        <ul class="flex flex-col gap-4 mb-4">
-          <li><a routerLink="/profile/my-information">Minhas informações</a></li>
-          <li><a routerLink="/profile/my-orders">Meus pedidos</a></li>
-          <li class="">
-            <a routerLink="/profile/my-products">Produtos a venda</a>
-          </li>
-        </ul>
-        <mat-divider></mat-divider>
-        <button (click)="onSubmit()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
-          Sair
-        </button>
-      </aside>
-    
-      <!-- Conteúdo das páginas -->
-      <div class="flex flex-1 p-4 bg-white shadow-md rounded-lg">
-        <router-outlet></router-outlet>
-      </div>
+  <div class="flex flex-1 w-3/4 h-3/4 px-[128px] py-[64px] m-auto">
+    <!-- Sidebar -->
+    <aside class="w-[300px] p-4 bg-[#013A71] shadow-md">
+      <ul class="flex flex-col gap-4 mb-4 text-white">
+        <li class="hover:bg-white p-2 hover:text-[#013A71]">
+          <a routerLink="/profile/my-information" class="block">Minhas informações</a>
+        </li>
+        <li class="hover:bg-white p-2 hover:text-[#013A71]">
+          <a routerLink="/profile/my-orders" class="block">Meus pedidos</a>
+        </li>
+        <li class="hover:bg-white p-2 hover:text-[#013A71]">
+          <a routerLink="/profile/my-products" class="block">Produtos a venda</a>
+        </li>
+      </ul>
+      <mat-divider></mat-divider>
+      <button (click)="onSubmit()" class="mt-4 bg-[#ffee00] text-[#013A71] font-medium px-4 py-2 rounded w-full hover:bg-yellow-500">
+        Sair
+      </button>
+    </aside>
+
+    <!-- Conteúdo -->
+    <div class="flex flex-1 p-4 overflow-hidden bg-white shadow-md rounded-lg">
+      <router-outlet></router-outlet>
     </div>
-    
+  </div>
+
+  <app-footer></app-footer>
+</div>

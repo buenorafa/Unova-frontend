@@ -5,12 +5,13 @@ import { UserService } from '../../shared/services/user.service';
 import { Router } from '@angular/router';
 import { User } from '../../shared/models/user';
 import { SweetAlertService } from '../../shared/services/sweet-alert.service';
+import { FooterComponent } from "../footer/footer.component";
 
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [NavBarComponent, ReactiveFormsModule],
+  imports: [NavBarComponent, ReactiveFormsModule, FooterComponent],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.scss',
 })

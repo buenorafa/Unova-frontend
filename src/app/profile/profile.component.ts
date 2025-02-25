@@ -5,11 +5,12 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { User } from '../../shared/models/user';
 import { UserService } from '../../shared/services/user.service';
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [NavBarComponent, MatDividerModule, CommonModule, RouterOutlet, RouterLink],
+  imports: [NavBarComponent, MatDividerModule, CommonModule, RouterOutlet, RouterLink, FooterComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })
