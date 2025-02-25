@@ -3,6 +3,7 @@ import {ProductStoreComponent} from "../product-store/product-store.component";
 import {Product, ProductService} from "../../shared/services/product.service";
 import {NavBarComponent} from "../nav-bar/nav-bar.component";
 import {NgForOf} from "@angular/common";
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-store',
@@ -10,7 +11,8 @@ import {NgForOf} from "@angular/common";
   imports: [
     ProductStoreComponent,
     NavBarComponent,
-    NgForOf
+    NgForOf,
+    FooterComponent
   ],
   templateUrl: './store.component.html',
   styleUrl: './store.component.scss'
