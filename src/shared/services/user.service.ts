@@ -19,14 +19,14 @@ export class UserService {
         return this.httpClient.get<User[]>(this.URL_USUARIOS);
     }
 
-    buscar(id: string): Observable<User> {
+    buscar(id: number): Observable<User> {
         return this.httpClient.get<User>(this.URL_USUARIOS + '/' + id);
     }
 
     editar(usuario: User): Observable<User> {
         return this.httpClient.put<User>(
         this.URL_USUARIOS + '/' + usuario.id,
-        User
+        usuario
         );
     }
 

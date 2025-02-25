@@ -8,6 +8,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { User } from '../../shared/models/user';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -18,6 +20,7 @@ import {
 })
 export class SignInComponent {
   loginForm: FormGroup;
+  usuario:User = new User();
 
   constructor(
     private fb: FormBuilder,
@@ -35,7 +38,9 @@ export class SignInComponent {
     console.log('Email:', email);
     this.userService.login(email, senha).subscribe({
       next: (user) => {
-        console.log('Login bem-sucedido:', user);
+        this.usuario = user
+        console.log('Login bem-sucedido:', this.usuario);
+        sessionStorage.setItem('usuario', JSON.stringify(this.usuario));
         this.roteador.navigate(['/profile']);
       },
       error: (error) => {

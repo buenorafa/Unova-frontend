@@ -1,54 +1,24 @@
 <app-nav-bar></app-nav-bar>
 
-<div class="w-full h-full flex px-[150px] py-[64px]">
-  <div
-    class="flex items-start gap-12 flex-[1_0_0] self-stretch min-h-screen p-4"
-  >
-    <!-- Sidebar -->
-    <aside class="w-[300px] p-4 bg-gray-100 shadow-md">
-      <ul class="flex flex-col gap-4 mb-4">
-        <li><a href="#" class="">Minhas informações</a></li>
-        <li class=""><a href="#">Meus pedidos</a></li>
-        <li class="bg-white rounded p-1">
-          <a href="#">Produtos a venda</a>
-        </li>
-      </ul>
-      <mat-divider class=""></mat-divider>
-      <button
-        (click)="onSubmit()"
-        class="mt-4 bg-red-500 text-white px-4 py-2 rounded"
-      >
-        Sair
-      </button>
-    </aside>
-    <div id="main-content" class="w-full">
-      <div class="p-4">
-        <h2 class="font-extralight">PRODUTOS A VENDA</h2>
+    <div class="w-3/4 h-3/4 flex px-[128px] py-[64px] m-auto">
+      <!-- Sidebar -->
+      <aside class="w-[300px] p-4 bg-gray-100 shadow-md">
+        <ul class="flex flex-col gap-4 mb-4">
+          <li><a routerLink="/profile/my-information">Minhas informações</a></li>
+          <li><a routerLink="/profile/my-orders">Meus pedidos</a></li>
+          <li class="">
+            <a routerLink="/profile/my-products">Produtos a venda</a>
+          </li>
+        </ul>
+        <mat-divider></mat-divider>
+        <button (click)="onSubmit()" class="mt-4 bg-red-500 text-white px-4 py-2 rounded">
+          Sair
+        </button>
+      </aside>
+    
+      <!-- Conteúdo das páginas -->
+      <div class="flex flex-1 p-4 bg-white shadow-md rounded-lg">
+        <router-outlet></router-outlet>
       </div>
-      <table class="w-full border-collapse">
-        <thead>
-          <tr class="bg-gray-200">
-            <th class="px-4 py-2 text-left">Produto</th>
-            <th class="px-4 py-2 text-left">Descrição</th>
-            <th class="px-4 py-2 text-left">Valor Unitário</th>
-            <th class="px-4 py-2 text-left">Quantidade Disponível</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let product of products" class="border-b">
-            <td class="p-4">
-              <img
-                [src]="product.image"
-                [alt]="product.name"
-                class="w-40 h-auto"
-              />
-            </td>
-            <td class="p-2">{{ product.name }}</td>
-            <td class="p-2">{{ product.price }}</td>
-            <td class="p-2 text-center">{{ product.quantity }}</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
-  </div>
-</div>
+    

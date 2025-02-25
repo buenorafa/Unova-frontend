@@ -1,0 +1,38 @@
+<div id="main-content" class="w-full">
+      @if(products.length == 0){
+        <div class="p-4">
+          <h2 class="font-extralight text-xl">PRODUTOS A VENDA</h2>
+          <p class="pt-6">Nenhum produto cadastrado!</p>
+        </div> 
+      } @else{  
+        <div class="p-4">
+          <h2 class="font-extralight text-xl">PRODUTOS A VENDA</h2>
+        </div>  
+        <div class="max-h-[500px] overflow-y-auto">
+    <table class="w-full border-collapse">
+      <thead>
+        <tr class="bg-gray-200">
+          <th class="px-4 py-2 text-left">Produto</th>
+          <th class="px-4 py-2 text-left">Descrição</th>
+          <th class="px-4 py-2 text-left">Valor Unitário</th>
+          <th class="px-4 py-2 text-left">Quantidade Disponível</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let product of products" class="border-b">
+          <td class="p-4">
+            <img
+              [src]="getFullImageUrl(product.imageUrl)"
+              [alt]="product.name"
+              class="w-30 h-auto"
+            />
+          </td>
+          <td class="p-2">{{ product.name }}</td>
+          <td class="p-2">{{ product.price }}</td>
+          <td class="p-2 text-center">{{ product.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+        </div>
+}
+</div>
