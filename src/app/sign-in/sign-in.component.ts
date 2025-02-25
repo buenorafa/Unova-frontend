@@ -40,7 +40,8 @@ export class SignInComponent {
       next: (user) => {
         this.usuario = user
         console.log('Login bem-sucedido:', this.usuario);
-        this.roteador.navigate(['/profile'], {state: {id: this.usuario.id}});
+        sessionStorage.setItem('usuario', JSON.stringify(this.usuario));
+        this.roteador.navigate(['/profile']);
       },
       error: (error) => {
         console.error('Erro no login:', error);

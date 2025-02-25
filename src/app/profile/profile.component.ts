@@ -14,24 +14,19 @@ import { UserService } from '../../shared/services/user.service';
   styleUrl: './profile.component.scss',
 })
 export class ProfileComponent {
-  usuario:any;
-  
+  usuario: User = new User();
   
 
   constructor(private roteador: Router, private userService:UserService) {
-    const navigation = this.roteador.getCurrentNavigation();
-    if (navigation?.extras.state) {
-      this.usuario = navigation.extras.state['id'];
+    const usuarioSalvo = sessionStorage.getItem('usuario');
+    if (usuarioSalvo) {
+      this.usuario = JSON.parse(usuarioSalvo);
     }
-
-    
-  }
-  ngOninit(){
     if (this.usuario.id) {
+      console.log('ID do usuário:', this.usuario.id);
       this.userService.buscar(this.usuario.id).subscribe({
         next: (user) =>{
-          this.usuario = user
-          console.log(this.usuario)
+          sessionStorage.setItem('usuario', JSON.stringify(user));
         },
     error: (error) => {
       console.error('Erro ao buscar usuario!', error)
@@ -40,7 +35,9 @@ export class ProfileComponent {
     } else {
       console.error('Usuário ou ID não encontrados');
     }
+    
   }
+
 
 
 
@@ -56,6 +53,9 @@ export class ProfileComponent {
     //     console.error('Erro no login:', error);
     //   },
     // });
+    sessionStorage.clear();
     this.roteador.navigate(['/sign-in']);
   }
 }
+
+

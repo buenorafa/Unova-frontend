@@ -49,14 +49,22 @@
     <div>
       <a href="#"><i class="fa-regular fa-user"></i></a>
     </div>
-    <div>
-      <a href="/sign-up"
-        ><span
-          class="border-[#FFCB05] rounded-lg bg-[#FFCB05] px-5 p-1 hover:bg-yellow-500"
-          >Criar Conta</span
-        ></a
-      >
-    </div>
+    @if (usuario) {
+  <div ><a routerLink="/profile/my-information">{{usuario.name}}</a></div>
+  }
+  @else {
+  <div>
+    <a routerLink="/sign-in" class="hover:underline">Login</a>
+  </div>
+  <div>
+    <a routerLink="/sign-up"
+      ><span
+        class="border-[#FFCB05] rounded-lg bg-[#FFCB05] px-5 p-1 hover:bg-yellow-500"
+        >Criar Conta</span
+      ></a
+    >
+  </div>
+}
     <!-- <div>Português</div>
     <div>Real</div> -->
   </div>

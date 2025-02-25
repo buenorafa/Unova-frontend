@@ -10,7 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ReactiveFormsModule, CommonModule, ProfileComponent, SignUpComponent, NavBarComponent, SignInComponent],
+  imports: [RouterOutlet, ReactiveFormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

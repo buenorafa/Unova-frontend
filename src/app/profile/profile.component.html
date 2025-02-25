@@ -1,36 +1,10 @@
 <app-nav-bar></app-nav-bar>
 
-<!-- <div class="w-full h-full flex px-[150px] py-[64px]">
-  <div
-    class="flex items-start gap-12 flex-[1_0_0] self-stretch min-h-screen p-4"
-  >
-    
-    <aside class="w-[300px] p-4 bg-gray-100 shadow-md">
-      <ul class="flex flex-col gap-4 mb-4">
-        <li><a routerLink="/my-information" class="">Minhas informações</a></li>
-        <li class=""><a routerLink="/my-orders">Meus pedidos</a></li>
-        <li class="bg-white rounded p-1">
-          <a routerLink="/my-products">Produtos a venda</a>
-        </li>
-      </ul>
-      <mat-divider class=""></mat-divider>
-      <button
-        (click)="onSubmit()"
-        class="mt-4 bg-red-500 text-white px-4 py-2 rounded"
-      >
-        Sair
-      </button>
-    </aside>
-    <div class="flex-1 p-4 bg-white shadow-md rounded-lg">
-      <router-outlet></router-outlet>
-    </div>
-  </div>
-    </div>  -->
-    <div class="w-full h-full flex px-[150px] py-[64px]">
+    <div class="w-3/4 h-3/4 flex px-[128px] py-[64px] m-auto">
       <!-- Sidebar -->
       <aside class="w-[300px] p-4 bg-gray-100 shadow-md">
         <ul class="flex flex-col gap-4 mb-4">
-          <li><a [routerLink]="['/profile/my-information']" [state]="{user: usuario}">Minhas informações</a></li>
+          <li><a routerLink="/profile/my-information">Minhas informações</a></li>
           <li><a routerLink="/profile/my-orders">Meus pedidos</a></li>
           <li class="">
             <a routerLink="/profile/my-products">Produtos a venda</a>

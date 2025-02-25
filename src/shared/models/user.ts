@@ -1,14 +1,17 @@
+import { Product } from "./product";
+
 export class User {
 
-    id?: string;
+    id?: number;
     name?: string;
     username?: string;
     phoneNumber?:string;
     email?: string;
     address?: string;
     password?: string;
+    products:Product[] = [];
 
-    constructor(id?: string, name?: string, username?: string, phoneNumber?:string,  email?: string, address?: string, password?: string) {
+    constructor(id?: number, name?: string, username?: string, phoneNumber?:string,  email?: string, address?: string, password?: string, products?: Product[]) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -16,5 +19,6 @@ export class User {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.address = address;
+        this.products = products || [];
         }
 }

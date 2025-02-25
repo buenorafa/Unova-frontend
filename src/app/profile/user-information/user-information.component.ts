@@ -10,14 +10,14 @@ import { User } from '../../../shared/models/user';
   styleUrl: './user-information.component.scss'
 })
 export class UserInformationComponent {
-usuario!:User;
+usuario!:User | undefined;
 
 
-  constructor(private roteador:Router){
-    const navigation = this.roteador.getCurrentNavigation();
-  if (navigation?.extras.state) {
-    this.usuario = navigation.extras.state['user'];
-  } 
+  constructor(){
+    const usuarioSalvo = sessionStorage.getItem('usuario');
+    if (usuarioSalvo) {
+      this.usuario = JSON.parse(usuarioSalvo);
+    }
   }
 
 }
