@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 export class MyCartComponent {
 
   carrinho: CartItem [] = []
+  total: number = 0;
 
   constructor(private carService: CartService){}
 
@@ -25,7 +26,10 @@ export class MyCartComponent {
         console.log('Produtos carregados:', data);
         if (data && Array.isArray(data)) {
           this.carrinho = data;
-          console.log(this.carrinho)
+          for( let item of this.carrinho){
+            this.total += (item.quantity * item.price)
+            console.log(this.total)
+          }
         } else {
           console.error('Formato inesperado da resposta:', data);
         }
@@ -49,5 +53,6 @@ export class MyCartComponent {
     }
     return `http://localhost:8080${imageUrl}`;
   }
+
 
 }

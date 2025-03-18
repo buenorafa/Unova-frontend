@@ -39,7 +39,7 @@
       </table>
       <div class="absolute end-2 bottom-2">
         <a routerLink="/store" class="text-[#013A71] hover:underline pr-8">Continuar comprando</a>
-        <button routerLink="#" class="product-button bg-[#013A71] hover:bg-[#395dd4]">Finalizar compra</button>
+        <button [routerLink]="['/checkout', total]" class="product-button bg-[#013A71] hover:bg-[#395dd4]">Finalizar compra</button>
       </div>
         }
 @else{

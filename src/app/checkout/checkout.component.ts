@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from '../footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -15,4 +16,12 @@ import {MatCard, MatCardContent, MatCardTitle} from "@angular/material/card";
 })
 export class CheckoutComponent {
   paymentMethod: string = 'pix';
+  total: any
+
+constructor(private route: ActivatedRoute) {}
+
+ngOnInit() {
+  this.total = this.route.snapshot.paramMap.get('total'); // Obtém o total da URL
+  console.log(this.total);
+}
 }
