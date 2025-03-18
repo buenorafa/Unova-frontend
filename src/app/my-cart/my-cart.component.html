@@ -3,29 +3,53 @@
 
   <div class="flex flex-1 w-3/4 h-3/4 px-[128px] py-[64px] m-auto">
     <!-- Sidebar -->
-    <aside class="w-[300px] p-4 bg-[#013A71] shadow-md text-center flex flex-col gap-4">
-      <h2 class="font-regular text-xl text-white">MEU CARRINHO<i class="fa-solid fa-cart-shopping pl-3"></i></h2>
+    <aside class="w-[300px] p-4 bg-[#013A71] shadow-md text-center flex flex-col">
+      <h2 class="font-regular text-xl text-white">Carrinho de compras</h2>
     </aside>
 
-    <!-- Conteúdo -->
-    <div class="flex flex-1 p-4 overflow-hidden bg-white shadow-md rounded-lg">
-      <div class="product-grid">
-  <div *ngFor="let cartItem of carrinho" class="product-card">
-    <img
-      class="product-image"
-      [src]="getFullImageUrl(cartItem.imageUrl)"
-      alt="{{ cartItem.name }}"
-    />
-    <div class="product-info">
-      <h3 class="product-title">{{ cartItem.name }}</h3>
-      <p class="product-description">{{ cartItem.description }}</p>
-      <p class="product-price">R$ {{ cartItem.price}}</p>
-      <p class="product-quantity">Quantidade: {{ cartItem.quantity }}</p>
-      <button class="product-button" (click)="removeFromCart(cartItem)">Remover do carrinho</button>
-    </div>
-  </div>
+   
+   
+    <div class="relative max-h-full w-full overflow-y-auto overflow-hidden bg-white shadow-md">
+      @if(carrinho.length > 0){
+      <table class="w-full border-collapse text-center">
+        <thead>
+          <tr>
+            <th class="px-4 py-2">Produto</th>
+            <th class="px-4 py-2">Nome</th>
+            <th class="px-4 py-2">Valor Unitário</th>
+            <th class="px-4 py-2">Quantidade</th>
+            <th class="px-4 py-2"></th>
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let cartItem of carrinho" class="border-b">
+            <td class="p-2 flex justify-center">
+              <img
+                [src]="getFullImageUrl(cartItem.imageUrl)"
+                [alt]="cartItem.name"
+                class="w-15 h-auto"
+              />
+            </td>
+            <td class="p-2">{{ cartItem.name }}</td>
+            <td class="p-2">{{ cartItem.price }}</td>
+            <td class="p-2">{{ cartItem.quantity }}</td>
+            <td class="p-2"><button class="product-button bg-[#e71616] hover:bg-[#691d24f6]" (click)="removeFromCart(cartItem.id)"><i class="fa-solid fa-trash"></i></button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="absolute end-2 bottom-2">
+        <a routerLink="/store" class="text-[#013A71] hover:underline pr-8">Continuar comprando</a>
+        <button routerLink="#" class="product-button bg-[#013A71] hover:bg-[#395dd4]">Finalizar compra</button>
+      </div>
+        }
+@else{
+  <!-- <h2 class="p-4 font-regular text-xl text-black">SEU CARRINHO ESTÁ VAZIO!</h2> -->
+   <span class="flex justify-center flex-col m-auto w-full mt-44 text-gray-500 text-center opacity-25"><i class="fa-solid fa-cart-shopping text-9xl"></i><h1 class="text-2xl font-semibold pt-5">Carrinho vazio!</h1></span>
+
+}
+
+
 </div>
-    </div>
   </div>
 
   <app-footer></app-footer>

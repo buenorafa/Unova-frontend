@@ -17,7 +17,8 @@ import { CartService } from '../../shared/services/cart.service';
   styleUrls: ['./product-store.component.scss'],
 })
 export class ProductStoreComponent {
-  products: any[] = [];
+  products: Product[] = [];
+  cartItem: CartItem = new CartItem();
 
   constructor(
     private productService: ProductService,
@@ -25,8 +26,14 @@ export class ProductStoreComponent {
     private cartService: CartService
   ) {}
 
-  addToCart(product: any) {
-    this.cartService.addCartProduct(product).subscribe({
+  addToCart(product: Product) {
+    this.cartItem.id = product.id
+    this.cartItem.name = product.name
+    this.cartItem.imageUrl = product.imageUrl
+    this.cartItem.price = product.price
+    this.cartItem.quantity += 1
+
+    this.cartService.addCartProduct(this.cartItem).subscribe({
       next: (data) => {
         this.snackBar.open(`${product.name} foi adicionado ao carrinho!`, 'Fechar', {
           duration: 3000, // Tempo que o alerta fica visível (3s)

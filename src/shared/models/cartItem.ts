@@ -3,7 +3,7 @@ export class CartItem {
     name: string;
     price: number;
     quantity: number;
-    imgUrl: string;
+    imageUrl: string;
     version: number;
  
   
@@ -19,7 +19,7 @@ export class CartItem {
       this.name = name;
       this.price = price;
       this.quantity = quantity;
-      this.imgUrl = imageUrl;
+      this.imageUrl = imageUrl;
       this.version = version;
     }
   }

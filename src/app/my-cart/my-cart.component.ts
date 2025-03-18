@@ -3,11 +3,13 @@ import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CartItem } from '../../shared/models/cartItem';
 import { CartService } from '../../shared/services/cart.service';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-my-cart',
   standalone: true,
-  imports: [NavBarComponent, FooterComponent],
+  imports: [NavBarComponent, FooterComponent, CommonModule, RouterModule],
   templateUrl: './my-cart.component.html',
   styleUrl: './my-cart.component.scss'
 })
@@ -23,6 +25,7 @@ export class MyCartComponent {
         console.log('Produtos carregados:', data);
         if (data && Array.isArray(data)) {
           this.carrinho = data;
+          console.log(this.carrinho)
         } else {
           console.error('Formato inesperado da resposta:', data);
         }
@@ -31,7 +34,7 @@ export class MyCartComponent {
     });
   }
 
-  removeFromCart(id: number) {
+  removeFromCart(id: any) {
     this.carService.deleteProduct(id).subscribe({
       next: () => {
         this.carrinho = this.carrinho.filter((item) => item.id !== id);
