@@ -1,4 +1,5 @@
 import { HomepageComponent } from './homepage/homepage.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -16,6 +17,7 @@ export const appRoutes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'homepage', component: HomepageComponent },
+  { path: 'checkout', component: CheckoutComponent },
   { path: 'store', component: StoreComponent },
   { path: 'add-product', component:AddProductComponent},
   {path:'my-cart', component: MyCartComponent},
