@@ -1,0 +1,96 @@
+<app-nav-bar></app-nav-bar>
+<div class="checkout-page">
+  <div class="checkout-container">
+    <div class="checkout-left">
+      <mat-card appearance="outlined" style="border-radius: 16px; width: 100%; padding: 16px; display: flex; flex-direction: column; gap: 16px">
+        <p style="font-size: 28px; font-weight: bold">Checkout</p>
+        <!-- Endereço de Entrega -->
+        <mat-card appearance="outlined" style="border-radius: 16px; width: 100%; padding: 16px; display: flex; flex-direction: column">
+          <mat-card-title>Endereço de Entrega</mat-card-title>
+          <div class="address-section">
+            <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 16px">
+              <div>
+                <label for="street">Rua</label>
+                <input id="street" type="text" placeholder="Nome da rua" />
+              </div>
+              <div>
+                <label for="number">Número</label>
+                <input id="number" type="text" placeholder="Número" />
+              </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.5fr 1.5fr 1fr; gap: 16px">
+              <div>
+                <label for="neighborhood">Bairro</label>
+                <input id="neighborhood" type="text" placeholder="Bairro" />
+              </div>
+              <div>
+                <label for="city">Cidade</label>
+                <input id="city" type="text" placeholder="Cidade" />
+              </div>
+              <div>
+                <label for="zipcode">CEP</label>
+                <input id="zipcode" type="text" placeholder="CEP" />
+              </div>
+            </div>
+
+          </div>
+        </mat-card>
+
+        <!-- Método de Pagamento -->
+        <mat-card appearance="outlined" style="border-radius: 16px; width: 100%; padding: 16px; display: flex; flex-direction: column; gap: 16px">
+          <mat-card-title>Método de pagamento</mat-card-title>
+          <div style="display: flex; flex-direction: row; gap: 16px">
+            <label>
+              <input type="radio" name="paymentMethod" value="pix" [(ngModel)]="paymentMethod" /> Pix
+            </label>
+            <label>
+              <input type="radio" name="paymentMethod" value="creditCard" [(ngModel)]="paymentMethod" /> Cartão de Crédito
+            </label>
+          </div>
+
+          <!-- Se o método de pagamento for PIX, mostra a imagem -->
+          <div *ngIf="paymentMethod === 'pix'" class="pix-box">
+            <img src="#" alt="Pix image" />
+          </div>
+
+          <!-- Se o método de pagamento for Cartão de Crédito, mostra o formulário -->
+          <div *ngIf="paymentMethod === 'creditCard'" class="card-box">
+            <div style="width: 100%; display: flex; flex-direction: row; gap: 16px">
+              <div style="width: 100%">
+                <label for="cardName">Nome no Cartão</label>
+                <input id="cardName" type="text" placeholder="Nome no cartão" />
+              </div>
+              <div style="width: 100%">
+                <label for="cardNumber">Número do Cartão</label>
+                <input id="cardNumber" type="text" placeholder="Número do cartão" />
+              </div>
+            </div>
+            <div style="width: 100%; display: flex; flex-direction: row; gap: 16px">
+              <div style="width: 100%">
+                <label for="expiryDate">Validade (MM/AA)</label>
+                <input id="expiryDate" type="text" placeholder="MM/AA" />
+              </div>
+              <div style="width: 100%">
+                <label for="cvv">CVV</label>
+                <input id="cvv" type="text" placeholder="Código de segurança" />
+              </div>
+            </div>
+          </div>
+        </mat-card>
+      </mat-card>
+    </div>
+
+    <div class="checkout-right" style="height: 100%">
+      <!-- Resumo da compra -->
+      <mat-card appearance="outlined" style="border-radius: 16px; width: 100%; height: 100%; padding: 16px; display: flex; flex-direction: column; gap: 16px">
+        <h3>Resumo da Compra</h3>
+        <p>Total: R$ 100,00</p>
+        <ul>
+          <li>Produto 1</li>
+          <li>Produto 2</li>
+        </ul>
+        <button mat-raised-button color="primary">Finalizar Compra</button>
+      </mat-card>
+    </div>
+  </div>
+</div>
