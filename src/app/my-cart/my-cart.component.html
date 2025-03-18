@@ -1,0 +1,32 @@
+<div class="flex flex-col min-h-screen">
+  <app-nav-bar></app-nav-bar>
+
+  <div class="flex flex-1 w-3/4 h-3/4 px-[128px] py-[64px] m-auto">
+    <!-- Sidebar -->
+    <aside class="w-[300px] p-4 bg-[#013A71] shadow-md text-center flex flex-col gap-4">
+      <h2 class="font-regular text-xl text-white">MEU CARRINHO<i class="fa-solid fa-cart-shopping pl-3"></i></h2>
+    </aside>
+
+    <!-- Conteúdo -->
+    <div class="flex flex-1 p-4 overflow-hidden bg-white shadow-md rounded-lg">
+      <div class="product-grid">
+  <div *ngFor="let cartItem of carrinho" class="product-card">
+    <img
+      class="product-image"
+      [src]="getFullImageUrl(cartItem.imageUrl)"
+      alt="{{ cartItem.name }}"
+    />
+    <div class="product-info">
+      <h3 class="product-title">{{ cartItem.name }}</h3>
+      <p class="product-description">{{ cartItem.description }}</p>
+      <p class="product-price">R$ {{ cartItem.price}}</p>
+      <p class="product-quantity">Quantidade: {{ cartItem.quantity }}</p>
+      <button class="product-button" (click)="removeFromCart(cartItem)">Remover do carrinho</button>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

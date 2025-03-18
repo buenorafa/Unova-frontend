@@ -3,6 +3,8 @@ import {MatCard, MatCardContent, MatCardModule} from "@angular/material/card";
 import {CommonModule, DecimalPipe} from "@angular/common";
 import {Product, ProductService} from "../../shared/services/product.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { CartItem } from '../../shared/models/cartItem';
+import { CartService } from '../../shared/services/cart.service';
 
 @Component({
   selector: 'app-product-store',
@@ -19,14 +21,20 @@ export class ProductStoreComponent {
 
   constructor(
     private productService: ProductService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private cartService: CartService
   ) {}
 
   addToCart(product: any) {
-    this.snackBar.open(`${product.name} foi adicionado ao carrinho!`, 'Fechar', {
-      duration: 3000, // Tempo que o alerta fica visível (3s)
-      horizontalPosition: 'center',
-      verticalPosition: 'top',
+    this.cartService.addCartProduct(product).subscribe({
+      next: (data) => {
+        this.snackBar.open(`${product.name} foi adicionado ao carrinho!`, 'Fechar', {
+          duration: 3000, // Tempo que o alerta fica visível (3s)
+          horizontalPosition: 'center',
+          verticalPosition: 'top',
+        });
+      },
+      error: (err) => console.error('Erro ao adicionar produto ao carrinho', err)
     });
   }
 

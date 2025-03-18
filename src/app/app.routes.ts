@@ -9,6 +9,7 @@ import {AddProductComponent} from "./add-product/add-product.component";
 import { UserInformationComponent } from './profile/user-information/user-information.component';
 import { OrdersComponent } from './profile/orders/orders.component';
 import { MyProductsComponent } from './profile/my-products/my-products.component';
+import { MyCartComponent } from './my-cart/my-cart.component';
 
 export const appRoutes: Routes = [
   // { path: '', redirectTo: 'sign-in', pathMatch: 'full' }, // Redireciona para login ao iniciar
@@ -17,6 +18,7 @@ export const appRoutes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'store', component: StoreComponent },
   { path: 'add-product', component:AddProductComponent},
+  {path:'my-cart', component: MyCartComponent},
   { path: 'profile', component: ProfileComponent,
     children:[
   { path: 'my-information', component: UserInformationComponent },
